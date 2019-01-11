@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="report.config" value=""></parameter>
+    <parameter name="system.info" value="com.ydd.config.MySystemInfo"></parameter>
+    <test verbose="2" preserve-order="true" name="cases">
+        <classes>
+            <class name="com.ydd.crm.cases.Test1">
+                <methods>
+                    <include name="test1" description="测试1"/>
+                    <include name="test2" description="测试2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.ydd.utils.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+</suite>

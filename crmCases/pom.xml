@@ -8,25 +8,52 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.ydd.autotest.crmCases</groupId>
+    <groupId>com.ydd.autotest</groupId>
     <artifactId>crmCases</artifactId>
     <packaging>jar</packaging>
     <name>crmCases</name>
+    <version>1.0</version>
 
     <dependencies>
         <dependency>
-            <groupId>com.ydd.autotest.service</groupId>
+            <groupId>com.ydd.autotest</groupId>
             <artifactId>service</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.ydd.autotest.service</groupId>
+                <groupId>com.ydd.autotest</groupId>
                 <artifactId>service</artifactId>
                 <version>1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.20.1</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                <suiteXmlFiles>
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
 </project>

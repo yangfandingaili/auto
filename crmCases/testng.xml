@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <parameter name="report.config" value=""></parameter>
-    <parameter name="system.info" value="com.ydd.config.MySystemInfo"></parameter>
-    <test verbose="2" preserve-order="true" name="cases">
+    <parameter name="report.config" value="src/main/resources/config/report/extent-config.xml"/>
+    <parameter name="system.info" value="com.ydd.config.MySystemInfo"/>
+    <test verbose="2" preserve-order="true" name="測試集合1">
+    <classes>
+        <class name="com.ydd.crm.cases.Test1">
+            <methods>
+                <include name="test1" description="测试1"/>
+                <include name="test2" description="测试2"/>
+            </methods>
+        </class>
+
+        <class name="com.ydd.crm.cases.Test2">
+            <methods>
+                <include name="test1" description="测试11"/>
+                <include name="test2" description="测试22"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+
+    <test verbose="2" preserve-order="true" name="測試集合2">
         <classes>
             <class name="com.ydd.crm.cases.Test1">
                 <methods>
@@ -11,9 +29,17 @@
                     <include name="test2" description="测试2"/>
                 </methods>
             </class>
+
+            <class name="com.ydd.crm.cases.Test2">
+                <methods>
+                    <include name="test1" description="测试11"/>
+                    <include name="test2" description="测试22"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <listeners>
-        <listener class-name="com.ydd.utils.ExtentTestNGIReporterListener"></listener>
+      <!--  <listener class-name="com.ydd.utils.ExtentTestNGIReporterListener"></listener>-->
+        <listener class-name="com.ydd.utils.listener.MyExtentTestNgFormatter"></listener>
     </listeners>
 </suite>

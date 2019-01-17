@@ -1,0 +1,1 @@
+UI自动化service類，多個page操作為一個servie

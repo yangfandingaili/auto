@@ -5,6 +5,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import com.ydd.utils.Log;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,7 +29,7 @@ public class TestMobileBaseCase {
 	public Log log=new Log(this.getClass().getSuperclass());
 	public static  String appPackage;//当前启动的app包名
 	public static String appActivity;//当前启动app的入口
-	
+	public static MobileElementAction action=new MobileElementAction();
 	@BeforeTest
 	@Parameters({"driverName","nodeURL","appName","deviceId","deviceName","sdkVersion","appMainPackage","appActivity","platformName"})
 	public void  setup( String driverName,String nodeURL,String appName,String deviceId,String deviceName,String sdkVersion,String appMainPackage,String appActivity,String platformName) throws MalformedURLException {
@@ -35,7 +37,7 @@ public class TestMobileBaseCase {
 		TestMobileBaseCase.appPackage = appMainPackage;
 		TestMobileBaseCase.appActivity = appActivity;
 		//启动appium server
-		MobileElementAction action=new MobileElementAction();
+
 		log.info("通过cmd命令启动appium server");
 		try {
 			String cmd="appium -a " +
@@ -54,10 +56,9 @@ public class TestMobileBaseCase {
 		else {
 			log.info("读取xml配置：Mobile Driver:"+driverName+"；Appium Server:"+"http://"+nodeURL+"/wd/hub"+"设备Id："+deviceId+"设备名字："+deviceName);
 			try {
-				//Process process=Runtime.getRuntime().exec("cmd.exe /c appium");
-				//System.out.println(process.toString());
-				//this.driver=setRemoteDriver(driverName, nodeURL, appName, deviceName, sdkVersion, appMainPackage, appActivity,platformName);
-				 driver=setRemoteDriver(driverName, nodeURL, appName, deviceId,deviceName, sdkVersion, appMainPackage, appActivity,platformName);
+				Process process=Runtime.getRuntime().exec("cmd.exe /c appium");
+				System.out.println(process.toString());
+				 this.driver=setRemoteDriver(driverName, nodeURL, appName, deviceId,deviceName, sdkVersion, appMainPackage, appActivity,platformName);
 				 log.info(driver.getCapabilities().toString());
 				System.out.println(driver.manage().logs().toString());
 			} catch (Exception e) {
@@ -71,11 +72,20 @@ public class TestMobileBaseCase {
 
 	@AfterTest
 	public void tearDown() throws IOException {
-		TestMobileBaseCase.driver.quit();
-		MobileElementAction action=new MobileElementAction();
-		log.info("关闭appium server");
-		action.executeCmd("taskkill /f/im cmd.exe");
-		log.info("-------------结束测试，并关闭退出driver及appium server-------------");
+		try{
+			Thread.sleep(2000);
+			driver.quit();
+//		driver.closeApp();
+		}catch (Exception e){
+			log.error(e.getMessage());
+		}finally {
+			log.info("关闭appium server");
+			//关闭启动appium的窗口进程
+			action.executeCmd("taskkill /f /im conhost.exe");
+			//关闭appium服务对应的进程
+			action.executeCmd("taskkill /f /im node.exe");
+			log.info("-------------结束测试，并关闭退出driver及appium server-------------");
+		}
 	}
 	/**
 	 *
@@ -102,21 +112,25 @@ public class TestMobileBaseCase {
 		{
 			case "AndroidDriver" :
 				//设置自动化相关参数
-				
-				desiredCapabilities.setCapability("platformName",platformName);
-				desiredCapabilities.setCapability("uuid",devieceId );
-				desiredCapabilities.setCapability("deviceName",deviceName );
-				desiredCapabilities.setCapability("platformVersion", sdkVersion);
-				//设置app路径
-				desiredCapabilities.setCapability("app", app.getAbsolutePath());
+
+				desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,platformName);
+				desiredCapabilities.setCapability(MobileCapabilityType.UDID,devieceId );
+				//devcieName为必输项，但是值没有意思，可以随便填写
+				desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME,deviceName );
+				desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, sdkVersion);
+				//设置app路径，
+//				desiredCapabilities.setCapability("app", app.getAbsolutePath());
 				//设置app主包名和主类名
-				desiredCapabilities.setCapability("appMainPackage", appMainPackage);
-				desiredCapabilities.setCapability("appActivity", appActivity);
+
+				desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, appMainPackage);
+				desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
+
 				//设置支持中文输入
-				desiredCapabilities.setCapability("unicodeKeyboard", "True");
-				desiredCapabilities.setCapability("resetKeyboard", "True");
-				desiredCapabilities.setCapability("noSign", "True");
-//				desiredCapabilities.setCapability("autoLaunch", false);
+				desiredCapabilities.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, "True");
+				desiredCapabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD, "True");
+				desiredCapabilities.setCapability(AndroidMobileCapabilityType.NO_SIGN, "True");
+				desiredCapabilities.setCapability("autoLaunch", false);
+//				desiredCapabilities.setCapability("fullReset", false);
 				//初始化driver
 				driver= new AndroidDriver<WebElement>(new URL("http://"+nodeURL+"/wd/hub"), desiredCapabilities);
 				break;
@@ -129,11 +143,15 @@ public class TestMobileBaseCase {
 				//设置app路径
 //				desiredCapabilities.setCapability("app", app.getAbsolutePath());
 				//设置app主包名和主类名
-				desiredCapabilities.setCapability("appMainPackage", appMainPackage);
+				desiredCapabilities.setCapability("appPackage", appMainPackage);
 				desiredCapabilities.setCapability("appActivity", appActivity);
+				//appWaitActivity：app启动后真正的activity名称
+				desiredCapabilities.setCapability("appWaitActivity",appActivity);
 				//设置支持中文输入
 				desiredCapabilities.setCapability("unicodeKeyboard", "True");
+				//将输入法重置为设置原有的输入法，unicodeKeyboard和resetKeyboard成对使用
 				desiredCapabilities.setCapability("resetKeyboard", "True");
+				//不重签名app，签名后app可能会打不开
 				desiredCapabilities.setCapability("noSign", "True");
 				//如果是H5的测试，需要加上此句
 				desiredCapabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chorme");
@@ -149,7 +167,7 @@ public class TestMobileBaseCase {
 				//设置自动化相关参数
 				DesiredCapabilities desiredCapabilities2=new DesiredCapabilities();
 				desiredCapabilities2.setCapability("platformName", "Android");
-				desiredCapabilities2.setCapability("uuid",devieceId );
+				desiredCapabilities2.setCapability("udid",devieceId );
 				desiredCapabilities2.setCapability("deviceName",deviceName );
 				desiredCapabilities2.setCapability("platformVersion", sdkVersion);
 				//设置app路径
@@ -157,6 +175,8 @@ public class TestMobileBaseCase {
 				//设置app主包名和主类名
 				desiredCapabilities2.setCapability("appMainPackage", appMainPackage);
 				desiredCapabilities2.setCapability("appActivity", appActivity);
+
+
 				//设置支持中文输入
 				desiredCapabilities2.setCapability("unicodeKeyboard", "True");
 				desiredCapabilities2.setCapability("resetKeyboard", "True");

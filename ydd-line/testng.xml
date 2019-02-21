@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+    <parameter name="driverName" value="AndroidDriver" />   <!--driver驱动：安卓，IOS-->
+    <parameter name="nodeURL" value="127.0.0.1:4723" /> <!--appium-server 地址-->
+    <parameter name="appName" value="EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk" />  <!--app包名字-->
+    <parameter name="platformName" value="Android" /> <!--app运行平台:安卓，IOS-->
+    <parameter name="deviceId" value="127.0.0.1:52001" /> <!--标识是哪台机器，预防有多台机器-->
+    <parameter name="deviceName" value="127.0.0.1:52001" /> <!--手机或者虚拟机设备名字,不能指定某一台機器-->
+    <parameter name="sdkVersion" value="4.4.2" /><!--安卓,IOS SDK版本-->
+    <parameter name="appMainPackage" value="com.yundada56.express" /><!--app主包名-->
+    <parameter name="appActivity" value="com.yundada56.express.ui.activity.SplashActivity" /> <!--app 主类名-->
+    <parameter name="brower" value="chrome" />  <!--浏览器类型-->
+    <test name="登录测试集合">
+        <classes>
+            <class name="com.ydd.cases.Login">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--  <test name="登录失败测试：数据驱动">
+         <classes>
+             <class name="LoginTest">
+                 <methods>
+                     <include name="loginFail"/>
+                 </methods>
+             </class>
+         </classes>
+     </test> -->
+</suite> <!-- Suite -->

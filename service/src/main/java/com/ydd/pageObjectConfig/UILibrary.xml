@@ -14,11 +14,11 @@
         Value:元素定位信息，如果是id,name,class，linktext直接把网页元素对应的这些属性值写上即可，如果是xpath定位方式，
         需要填写正确的xpath语法格式。
         Desc:元素的描述，元素的中文描述信息-->
-	<page pagename="org.webdriver.patatiumappui.pageObject.LoginPage" value="" desc="中台CRM">
+	<page pagename="com.ydd.page.crm.LoginPage" value="" desc="中台CRM">
 	   <locator type="xpath" timeout="3" value="//input[@placeholder='请输入用户手机号']"  desc="输入手机号输入框" text="">phoneInput</locator>
 	   <locator type="xpath" timeout="3" value="//input[@placeholder='请输入验证码']"  desc="输入验证码输入框">validInput</locator>
-	   <locator type="xpath" timeout="3" value="//button[0]"  desc="获取验证码按钮">validButton</locator>
-	   <locator type="xpath" timeout="3" value="//button[1]"  desc="登录按钮">loginButton</locator>
+	   <locator type="xpath" timeout="3" value="//span[contains(text(),'获取验证码')]"  desc="获取验证码按钮">validButton</locator>
+	   <locator type="xpath" timeout="3" value="//div[@class='ivu-form-item-content']/button[1]"  desc="登录按钮">loginButton</locator>
     </page>
     
 </map>

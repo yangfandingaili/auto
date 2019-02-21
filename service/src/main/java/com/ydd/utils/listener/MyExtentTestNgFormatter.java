@@ -10,9 +10,10 @@ import com.vimalselvam.testng.EmailReporter;
 import com.vimalselvam.testng.NodeName;
 import com.vimalselvam.testng.SystemInfo;
 import com.vimalselvam.testng.listener.ExtentTestNgFormatter;
+import com.ydd.utils.web.WebAssertion;
+import com.ydd.utils.web.WebElementAction;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
-import sun.net.www.content.image.png;
 
 import java.io.File;
 import java.io.IOException;
@@ -91,6 +92,7 @@ public class MyExtentTestNgFormatter extends ExtentTestNgFormatter {
     }
 
     public void onStart(ISuite iSuite) {
+        System.out.println("onStart(ISuite iSuite)");
         if (iSuite.getXmlSuite().getTests().size() > 0) {
             ExtentTest suite = reporter.createTest(iSuite.getName());
             String configFile = iSuite.getParameter("report.config");
@@ -125,32 +127,34 @@ public class MyExtentTestNgFormatter extends ExtentTestNgFormatter {
     }
 
     public void onFinish(ISuite iSuite) {
+        System.out.println("onFinish");
     }
 
 
     public void onTestStart(ITestResult iTestResult) {
+        WebAssertion.errors.clear();//测试用例开始前清除断言错误
+        WebElementAction.noSuchElementExceptions.clear();//测试用例开始前清除异常
+        WebElementAction.imageNames.clear();//测试用例开始执行前，先清除失败截图名称
         MyReporter.setTestName(iTestResult.getName());
+        System.out.println("onTestStart");
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("success");
+        System.out.println("onTestSuccess");
     }
 
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("failed");
+        System.out.println("onTestFailure");
         try {
-            File file = new File(System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "image" + File.separator + "1111.png");
-            System.out.println("file.getCanonicalPath()"+file.getCanonicalPath());
-            System.out.println(file.exists());
-            System.out.println(System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "image" + File.separator + "1111.png");
-            addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "image" + File.separator + "1111.png");
+            System.out.println("xxx;" + WebElementAction.imageNames.get(0) );
+            addScreenCaptureFromPath(System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "snapshot" + File.separator + WebElementAction.imageNames.get(0) + ".jpg");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
-
+        System.out.println("onTestSkipped");
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
@@ -158,6 +162,7 @@ public class MyExtentTestNgFormatter extends ExtentTestNgFormatter {
     }
 
     public void onStart(ITestContext iTestContext) {
+        System.out.println("onStart(ITestContext iTestContext)");
         ISuite iSuite = iTestContext.getSuite();
         ExtentTest suite = (ExtentTest) iSuite.getAttribute(SUITE_ATTR);
         ExtentTest testContext = suite.createNode(iTestContext.getName());
@@ -178,6 +183,7 @@ public class MyExtentTestNgFormatter extends ExtentTestNgFormatter {
     }
 
     public void beforeInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {
+        System.out.println("beforeInvocation");
         if (iInvokedMethod.isTestMethod()) {
             ITestContext iTestContext = iTestResult.getTestContext();
             ExtentTest testContext = (ExtentTest) iTestContext.getAttribute("testContext");
@@ -207,6 +213,7 @@ public class MyExtentTestNgFormatter extends ExtentTestNgFormatter {
                 test.assignCategory(group);
             }
         }
+        System.out.println("afterInvocation");
     }
 
     /**

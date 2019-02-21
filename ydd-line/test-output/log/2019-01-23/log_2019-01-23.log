@@ -1,0 +1,129 @@
+[2019-01-23 09:50:32,804] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 09:50:44,940] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 09:51:30,525] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 09:52:05,363] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 09:52:06,273] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 09:52:17,016] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 09:52:31,584] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 09:52:46,374] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 09:53:23,556] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 09:53:23,599] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 09:53:23,607] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 09:53:33,608] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 09:53:35,328] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 10:01:41,794] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 10:01:44,070] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 10:01:49,115] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 10:02:02,217] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 10:02:34,402] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 10:32:29,827] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 10:32:30,563] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 10:32:36,830] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 10:32:56,126] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 10:34:02,435] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:09:52,096] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:09:52,099] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:10:45,222] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:10:49,826] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:12:09,709] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:12:09,712] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:12:10,921] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:12:37,222] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:12:37,224] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:12:39,337] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:12:53,191] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:12:53,195] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:13:48,864] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:13:48,867] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:13:50,934] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:14:12,478] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:14:12,481] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:16:01,930] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:16:03,642] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:16:40,159] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:16:45,270] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:16:45,274] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:17:21,340] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:17:32,392] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:17:32,397] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:18:21,859] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:18:21,862] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:18:22,919] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:19:35,367] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:19:35,371] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:30:11,751] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:30:20,273] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:30:20,277] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:31:04,412] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:37:07,593] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:37:07,596] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:37:09,929] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 11:37:56,610] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 11:37:56,613] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 11:47:59,653] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 13:43:59,790] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 13:43:59,794] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 13:45:10,155] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 13:45:53,172] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 13:45:53,176] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 13:46:12,782] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 13:47:35,606] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 13:47:35,639] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 13:47:35,648] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 13:47:45,648] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 13:47:47,412] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 14:18:18,256] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 14:18:18,259] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 14:18:30,447] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 14:44:35,340] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 14:44:35,343] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 14:44:46,911] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 14:45:24,174] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 14:45:24,177] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 14:45:37,927] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 15:27:17,564] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 15:27:17,600] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 15:27:17,608] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 15:37:39,360] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 15:37:39,425] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 15:37:39,434] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 15:37:49,436] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 15:38:02,154] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 15:39:16,440] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 15:39:16,476] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 15:39:16,483] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 15:39:26,483] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 15:39:40,186] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 15:39:42,379] INFO  com.ydd.utils.mobile.TestMobileBaseCase 关闭appium server
+[2019-01-23 15:39:42,383] INFO  com.ydd.utils.mobile.TestMobileBaseCase -------------结束测试，并关闭退出driver及appium server-------------
+[2019-01-23 15:40:53,600] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 15:40:53,634] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 15:40:53,640] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 15:41:03,641] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 15:41:15,266] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 15:41:16,668] INFO  com.ydd.utils.mobile.TestMobileBaseCase 关闭appium server
+[2019-01-23 15:41:16,672] INFO  com.ydd.utils.mobile.TestMobileBaseCase -------------结束测试，并关闭退出driver及appium server-------------
+[2019-01-23 15:47:56,466] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 15:47:56,499] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 15:47:56,504] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 15:48:06,504] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 15:48:18,814] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 15:48:20,381] INFO  com.ydd.utils.mobile.TestMobileBaseCase 关闭appium server
+[2019-01-23 15:48:20,385] INFO  com.ydd.utils.mobile.TestMobileBaseCase -------------结束测试，并关闭退出driver及appium server-------------
+[2019-01-23 16:17:40,488] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 16:17:40,528] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 16:17:40,536] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 16:17:50,538] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 16:18:23,797] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 16:19:44,229] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 16:19:44,268] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 16:19:44,274] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 16:19:54,274] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 16:19:55,215] ERROR com.ydd.utils.mobile.TestMobileBaseCase appium环境配置失败
+[2019-01-23 16:20:02,567] INFO  com.ydd.utils.mobile.TestMobileBaseCase ------------------开始执行测试---------------
+[2019-01-23 16:20:02,595] INFO  com.ydd.utils.mobile.TestMobileBaseCase 通过cmd命令启动appium server
+[2019-01-23 16:20:02,601] INFO  com.ydd.utils.mobile.MobileElementAction 等待10秒
+[2019-01-23 16:20:12,602] INFO  com.ydd.utils.mobile.TestMobileBaseCase 读取xml配置：Mobile Driver:AndroidDriver；Appium Server:http://127.0.0.1:4723/wd/hub设备Id：127.0.0.1:52001设备名字：127.0.0.1:52001
+[2019-01-23 16:20:24,833] INFO  com.ydd.utils.mobile.TestMobileBaseCase Capabilities [{app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, networkConnectionEnabled=true, noSign=true, warnings={}, databaseEnabled=false, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, platform=LINUX, appActivity=com.yundada56.express.ui.activity.SplashActivity, desired={app=C:\gitwork\autoParent\ydd-line\apps\EXPRESS_Android_DEV_1.9.0_4d68300942a3954793d7c8e27ae437fc.apk, appActivity=com.yundada56.express.ui.activity.SplashActivity, noSign=true, platformVersion=4.4.2, unicodeKeyboard=true, platformName=Android, uuid=127.0.0.1:52001, deviceName=127.0.0.1:52001, appMainPackage=com.yundada56.express, resetKeyboard=true}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
+[2019-01-23 16:20:26,158] INFO  com.ydd.utils.mobile.TestMobileBaseCase 关闭appium server
+[2019-01-23 16:20:26,166] INFO  com.ydd.utils.mobile.TestMobileBaseCase -------------结束测试，并关闭退出driver及appium server-------------

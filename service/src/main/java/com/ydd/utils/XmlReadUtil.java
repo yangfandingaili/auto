@@ -28,6 +28,7 @@ public class XmlReadUtil {
 		HashMap<String, Locator> locatorMap = new HashMap<String, Locator>();
 		locatorMap.clear();
 		try {
+			System.out.println(path);
 			File file = new File(path);
 			if (!file.exists()) {
 				throw new IOException("Can't find " + path);

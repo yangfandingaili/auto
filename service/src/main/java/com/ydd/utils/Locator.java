@@ -81,10 +81,6 @@ public class Locator {
     this.timout = timout;
   }
 
-  public String getLocatorName() {
-    return locatorName;
-  }
-
   public void setLocatorName(String locatorName) {
     this.locatorName = locatorName;
   }

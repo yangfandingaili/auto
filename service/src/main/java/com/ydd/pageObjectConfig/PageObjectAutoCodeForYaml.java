@@ -150,28 +150,8 @@ public class PageObjectAutoCodeForYaml {
 			sb.append("\n}");
 			//sb.append("\n private String path=PageObjectAutoCode.class.getClassLoader().getResource(\"net/hk515/pageObjectConfig/UILibrary.xml\").getPath();");
 			//遍历Page节点下的Locator节点
-			for(Iterator<?> j=page.elementIterator();j.hasNext();)
-			{
-				//获取locaror节点
-				Element locator =(Element)j.next();
-				String locatorName=locator.getTextTrim();
-				if(locator.attributeCount()>3)
-				{sb.append("\n/***\n"
-						+ "* "+locator.attribute(3).getValue()+"\n"
-						+ "* @return\n"
-						+ "* @throws IOException\n"
-						+ "*/\n");
-				}
-				else
-				{
-					sb.append("\n");
-				}
-				sb.append("public  Locator "+locatorName+"() throws IOException\n {\n");
-				//sb.append("   setXmlObjectPath(path);\n");
-				sb.append("   Locator locator=getLocator(\""+locatorName+"\");\n");
-				sb.append("   return locator;\n }\n");
-			}
-			sb.append("}");
+            PageObjectAutoCodeForXml.gennerateCode(page, sb);
+            sb.append("}");
 			//将自动生成的PageObject代码写入文件
 			File pageObjectFile=new File("src/main/java/org/webdriver/patatiumappui/pageObject/"+pageClassName+".java");
 			if(pageObjectFile.exists())

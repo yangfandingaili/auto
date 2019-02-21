@@ -1,41 +1,30 @@
 package com.ydd.utils.web;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
+import com.google.common.io.Files;
 import com.ydd.utils.Locator;
 import com.ydd.utils.Log;
 import com.ydd.utils.ScreenShot;
 import com.ydd.utils.mobile.MobileElementAction;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.google.common.io.Files;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class WebElementAction extends TestWebBaseCase{
 	
 	private Log log=new Log(this.getClass());
 	public static ArrayList<Exception> noSuchElementExceptions=new ArrayList<Exception>();
+	//每个测试用例保存测试截图失败的路径
+	public static ArrayList<String> imageNames = new ArrayList<>();
 	/**
 	 * 重定向到url
 	 * @param url
@@ -56,12 +45,12 @@ public class WebElementAction extends TestWebBaseCase{
 			webElement.sendKeys(value);
 			//log.info("input输入："+locator.getLocalorName()+"["+"By."+locator.getType()+":"+locator.getElement()+"  value:"+value+"]");
 			log.info("input输入："+locator.getLocalorName()+"["+"By."+locator.getType()+":"+locator.getElement()+"  value:"+"*******"+"]");
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			log.error("找不到元素，input输入失败:"+locator.getLocalorName()+"["+"By."+locator.getType()+":"+locator.getElement()+"]");
 			e.printStackTrace();
-			//throw e;
-			//Assertion.flag=false;
+			throw e;
+//			Assertion.flag=false;
 		}
 
 	}
@@ -490,10 +479,6 @@ public class WebElementAction extends TestWebBaseCase{
 					});
 			return webElements;
 		} catch (NoSuchElementException e) {
-			// TODO: handle exception
-			log.info("无法定位页面元素");
-			e.printStackTrace();
-			WebAssertion.assertInfolList.add("failed,找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
 			noSuchElementExceptions.add(e);
 			WebAssertion.messageList.add("找不到所需页面元素["+locator.getElement()+"]:failed");
 			ScreenShot screenShot=new ScreenShot(driver);
@@ -501,7 +486,10 @@ public class WebElementAction extends TestWebBaseCase{
 			Date nowDate=new Date();
 			screenShot.setscreenName(this.formatDate(nowDate));
 			screenShot.takeScreenshot();
-			//报表展示截图
+			//报表展示截图			// TODO: handle exception
+			//			log.info("无法定位页面元素");
+			//			e.printStackTrace();
+			//			WebAssertion.assertInfolList.add("failed,找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
 			this.showscreenShot(nowDate);
 			log.info(this.formatDate(nowDate));
 			return webElements;
@@ -552,69 +540,42 @@ public class WebElementAction extends TestWebBaseCase{
 		//Waitformax(Integer.valueOf(locator.getWaitSec()));
 		WebElement webElement=null;
 		try {
-			webElement=(new WebDriverWait(driver, 20)).until(
-					new ExpectedCondition<WebElement>() {
-
-						@Override
-						public WebElement apply(WebDriver driver) {
-							// TODO 自动生成的方法存根
-							WebElement element=null;
-							element=getElement(locator);
-							return element;
-						}
+			webElement=(new WebDriverWait(driver, locator.getTimout())).until(
+					(ExpectedCondition<WebElement>) driver -> {
+						// TODO 自动生成的方法存根
+						WebElement element;
+						element=getElement(locator);
+						return element;
 					});
 			return webElement;
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
-			log.info("无法定位页面元素");
-			e.printStackTrace();
-			WebAssertion.assertInfolList.add("failed,找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
-			noSuchElementExceptions.add(e);
-			WebAssertion.messageList.add("找不到所需页面元素["+locator.getElement()+"]:failed");
-			ScreenShot screenShot=new ScreenShot(driver);
-			//设置截图名字
-			Date nowDate=new Date();
-			screenShot.setscreenName(this.formatDate(nowDate));
-			screenShot.takeScreenshot();
-			//展示报表截图
-			this.showscreenShot(nowDate);
-			log.info(this.formatDate(nowDate));
-			return webElement;
+			 getWebElement(locator, webElement, e);
+			 throw  e;
 		}
-		catch (TimeoutException e) {
-			// TODO: handle exception
-			log.info("超时无法定位页面元素");
-			e.printStackTrace();
-			WebAssertion.assertInfolList.add("failed,超时找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
-			noSuchElementExceptions.add(e);
-			WebAssertion.messageList.add("超时找不到所需页面元素["+locator.getElement()+"]:failed");
-			ScreenShot screenShot=new ScreenShot(driver);
-			//设置截图名字
-			Date nowDate=new Date();
-			screenShot.setscreenName(this.formatDate(nowDate));
-			screenShot.takeScreenshot();
-			//展示报表截图
-			this.showscreenShot(nowDate);
-			log.info(this.formatDate(nowDate));
-			return webElement;
-		}
-		catch (ElementNotVisibleException e) {
-			// TODO: handle exception
-			log.info("超时无法定位页面元素");
-			e.printStackTrace();
-			WebAssertion.assertInfolList.add("failed,超时找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
-			noSuchElementExceptions.add(e);
-			WebAssertion.messageList.add("超时页面元素不可视["+locator.getElement()+"]:failed");
-			ScreenShot screenShot=new ScreenShot(driver);
-			//设置截图名字
-			Date nowDate=new Date();
-			screenShot.setscreenName(this.formatDate(nowDate));
-			screenShot.takeScreenshot();
-			//展示报表截图
-			this.showscreenShot(nowDate);
-			log.info(this.formatDate(nowDate));
-			return webElement;
-		}
+//		catch (TimeoutException e) {
+//			return getWebElement(locator, webElement, e);
+//		}
+//		catch (ElementNotVisibleException e) {
+//			return getWebElement(locator, webElement, e);
+//		}
+	}
+
+	private WebElement getWebElement(Locator locator, WebElement webElement, Exception e) {
+		log.info("无法定位页面元素");
+//			e.printStackTrace();
+		WebElementAction.noSuchElementExceptions.add(e);
+		WebAssertion.assertInfolList.add("failed,找不到元素：["+locator.getType()+":"+locator.getElement()+"等待:"+locator.getWaitSec());
+//			WebAssertion.messageList.add("找不到所需页面元素["+locator.getElement()+"]:failed");
+		ScreenShot screenShot=new ScreenShot(driver);
+		//设置截图名字
+		Date nowDate=new Date();
+		imageNames.add(this.formatDate(nowDate) + locator.getLocalorName());//添加截图的名称到list中
+		screenShot.setscreenName(this.formatDate(nowDate) + locator.getLocalorName());
+		screenShot.takeScreenshot();
+		//展示报表截图
+//			this.showscreenShot(nowDate);
+		return webElement;
 	}
 
 	/**

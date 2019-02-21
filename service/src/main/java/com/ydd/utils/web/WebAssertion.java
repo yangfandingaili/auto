@@ -41,35 +41,6 @@ public class WebAssertion extends TestWebBaseCase {
 		Date nowDate=new Date();
 		screenShot.setscreenName(WebAssertion.formatDate(nowDate));
 		screenShot.takeScreenshot();
-//		Assertion.assertInfolList.add("&lt;a href=\"snapshot/"+Assertion.formatDate(nowDate)+".jpg\" &gt;&lt;img height=\"100\" width=\"100\" src=\"snapshot\\"+Assertion.formatDate(nowDate)+".jpg\"&gt;&lt;/img&gt;&lt;/a&gt;&lt;br/&gt;"+"&lt;a href=\"snapshot\\"+Assertion.formatDate(nowDate)+".jpg\" &gt;点击查看大图&lt;/a&gt;\n");
-		WebAssertion.messageList.add("&lt;a class=\"clickbox\" href=\"#url\"&gt;\n"
-				+ "&lt;img src=\"snapshot/"
-				+ WebAssertion.formatDate(nowDate)
-				+ ".jpg\" height=\"100\" width=\"100\" alt=\"\" /&gt;\n"
-				+ "&lt;b class=\"lightbox\"&gt;\n"
-				+ "&lt;b class=\"light\"&gt;&lt;/b&gt;\n"
-				+ "&lt;b class=\"box\"&gt;\n"
-				+ "&lt;img src=\"snapshot/"
-				+ WebAssertion.formatDate(nowDate)
-				+ ".jpg\" height=\"530\" width=\"1024\" onmousewheel=\"return bigimg(this)\" alt=\"\" /&gt;\n"
-				+ "&lt;span&gt;滚动鼠标缩放大小,点击X关闭当前图片，返回报表界面.&lt;br /&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;\n"
-				+ "&lt;/b&gt;\n"
-				+ "&lt;/b&gt;\n"
-				+ "&lt;/a&gt;\n"
-				+ "&lt;br class=\"clear\" /&gt;\n"
-				+"&lt;a class=\"clickbox\" href=\"#url\"&gt;"
-				+ "点击查看大图"
-				+ "&lt;b class=\"lightbox\"&gt;"
-				+ "&lt;b class=\"light\"&gt;&lt;/b&gt;"
-				+ "&lt;b class=\"box\"&gt;&lt;img src=\"snapshot/"
-				+ WebAssertion.formatDate(nowDate)
-				+ ".jpg\" height=\"530\" width=\"1024\" onmousewheel=\"return bigimg(this)\" alt=\"\" /&gt;"
-				+ "&lt;span&gt;滚动鼠标缩放大小,点击X关闭当前图片，返回报表界面."
-				+ "&lt;br /&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;"
-				+ "&lt;/b&gt;"
-				+ "&lt;/b&gt;"
-				+ " &lt;/a&gt;\n&lt;/br&gt;"
-				+ "&lt;div id=\"close\"&gt;&lt;/div&gt;\n");
 	}
 	/**
 	 * 验证actual实际值是否包含预期值exceptStr
@@ -1048,8 +1019,14 @@ public class WebAssertion extends TestWebBaseCase {
 		System.out.println("errors.size()：" + errors.size() );
 		Assert.assertEquals(errors.size(), 0);
 		//有找不到元素的异常也认为用例失败
-		Assert.assertEquals(MobileElementAction.noSuchElementExceptions.size(), 0);
-		System.out.println("noSuchElementExceptions.size()：" + MobileElementAction.noSuchElementExceptions.size() );
+//		Assert.assertEquals(MobileElementAction.noSuchElementExceptions.size(), 0);
+	}
+
+	/**
+	 * 监控测试用例有没有异常产生
+	 */
+	public static void verityExcetion(){
+		Assert.assertEquals(WebElementAction.noSuchElementExceptions.size(),0);
 	}
 	public static void main(String[] args) {
 

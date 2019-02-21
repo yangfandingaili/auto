@@ -61,6 +61,19 @@ public class MobileElementAction extends TestMobileBaseCase{
 	 * 一般先判断是否安装app，如果安装了就卸载app
 	 * @param appPackage
 	 */
+
+	/**
+	 *判断元素是否存在
+	 * @param locator 元素定位对象
+	 * @return
+	 */
+	public boolean isExsit(Locator locator){
+			WebElement element = findElement(locator);
+			if(element == null){
+				return false;
+			}
+			return true;
+		}
 	public void removeApp(String appPackage) {
 		if (isInstallApp(appPackage)) {
 			driver.removeApp(appPackage);
@@ -246,6 +259,24 @@ public class MobileElementAction extends TestMobileBaseCase{
 	{
 		driver.swipe(x1,y1,x2,y2,wait);
 	}
+
+	/**
+	 * 通用从右向左边滑动
+	 */
+	public void swipeToLeft(){
+		int heght = driver.manage().window().getSize().height;
+		int width = driver.manage().window().getSize().width;
+		driver.swipe(9*width/10,heght/2,2*width/10,heght/2,500);
+	}
+
+    /**
+     * 通用从左向右边滑动
+     */
+	public void swipeToRight(){
+        int heght = driver.manage().window().getSize().height;
+        int width = driver.manage().window().getSize().width;
+        driver.swipe(2*width/10,heght/2,9*width/10,heght/2,500);
+    }
 
 	/**
 	 * 在控件中心点轻按下
@@ -796,7 +827,8 @@ public class MobileElementAction extends TestMobileBaseCase{
 			screenShot.setscreenName(this.formatDate(nowDate));
 			screenShot.takeScreenshot();
 			//展示报表截图
-			this.showscreenShot(nowDate);
+			// todo 此处要改成上传到testlink上
+//			this.showscreenShot(nowDate);
 			log.info(this.formatDate(nowDate));
 			return webElement;
 		}

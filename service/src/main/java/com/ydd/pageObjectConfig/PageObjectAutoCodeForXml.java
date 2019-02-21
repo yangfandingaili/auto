@@ -14,7 +14,7 @@ import java.util.Iterator;
 //通过解析xml文件自动生成对象库代码
 public class PageObjectAutoCodeForXml {
 	Log log=new Log(this.getClass());
-	static  String path="src/main/java/org/webdriver/patatiumappui/pageObjectConfig/UILibrary.xml";
+	static  String path="service/src/main/java/com/ydd/pageObjectConfig/UILibrary.xml";
 	public static void autoCode() throws Exception
 	{
 		File file = new File(path);
@@ -44,13 +44,13 @@ public class PageObjectAutoCodeForXml {
 			StringBuffer sb=new StringBuffer("package "+packageName+";\n");
 			sb.append("import java.io.IOException;\n");
 			sb.append("import java.io.InputStream;\n");
-			sb.append("import org.webdriver.patatiumappui.utils.BaseAction;\n");
-			sb.append("import org.webdriver.patatiumappui.utils.Locator;\n");
-			sb.append("import org.webdriver.patatiumappui.pageObjectConfig.PageObjectAutoCodeForXml;");
+			sb.append("import com.ydd.utils.BaseAction;\n");
+			sb.append("import import com.ydd.utils.Locator;\n");
+			sb.append("import com.ydd.pageObjectConfig.PageObjectAutoCodeForXml;");
 			sb.append("//"+page.attribute(2).getValue()+"_对象库类\n");
 			sb.append("public class "+ pageClassName+" extends BaseAction {\n");
 			sb.append("//用于eclipse工程内运行查找对象库文件路径\n");
-			sb.append("private String path=\"src/main/java/org/webdriver/patatiumappui/pageObjectConfig/UILibrary.xml\";\n");
+			sb.append("private String path=\"service/src/main/java/ydd/pageObjectConfig/UILibrary.xml\";\n");
 			//sb.append("//用户打包成jar后查找对象库文件路径\n");
 			//sb.append("private InputStream pathInputStream=PageObjectAutoCode.class.getClassLoader().getResourceAsStream(\"net/hk515/pageObjectConfig/UILibrary.xml\");	\n");
 			sb.append(" public   "
@@ -62,33 +62,13 @@ public class PageObjectAutoCodeForXml {
 			sb.append("\n}");
 			//sb.append("\n private String path=PageObjectAutoCode.class.getClassLoader().getResource(\"net/hk515/pageObjectConfig/UILibrary.xml\").getPath();");
 			//遍历Page节点下的Locator节点
-			for(Iterator<?> j=page.elementIterator();j.hasNext();)
-			{
-				//获取locaror节点
-				Element locator =(Element)j.next();
-				String locatorName=locator.getTextTrim();
-				if(locator.attributeCount()>3)
-				{sb.append("\n/***\n"
-						+ "* "+locator.attribute(3).getValue()+"\n"
-						+ "* @return\n"
-						+ "* @throws IOException\n"
-						+ "*/\n");
-				}
-				else
-				{
-					sb.append("\n");
-				}
-				sb.append("public  Locator "+locatorName+"() throws IOException\n {\n");
-				//sb.append("   setXmlObjectPath(path);\n");
-				sb.append("   Locator locator=getLocator(\""+locatorName+"\");\n");
-				sb.append("   return locator;\n }\n");
-			}
+			gennerateCode(page, sb);
 			sb.append("}");
 			//将自动生成的PageObject代码写入文件
-			File pageObjectFile=new File("src/main/java/org/webdriver/patatiumappui/pageObject/"+pageClassName+".java");
+			File pageObjectFile=new File("service/src/main/java/com/ydd/page/crm/"+pageClassName+".java");
 			if(pageObjectFile.exists())
 			{
-				pageObjectFile.delete();;
+				pageObjectFile.delete();
 			}
 			try {
 				FileWriter fileWriter=new FileWriter(pageObjectFile, false);
@@ -107,6 +87,31 @@ public class PageObjectAutoCodeForXml {
 
 
 	}
+
+	static void gennerateCode(Element page, StringBuffer sb) {
+		for(Iterator<?> j = page.elementIterator(); j.hasNext();)
+		{
+			//获取locaror节点
+			Element locator =(Element)j.next();
+			String locatorName=locator.getTextTrim();
+			if(locator.attributeCount()>3)
+			{sb.append("\n/***\n"
+					+ "* "+locator.attribute(3).getValue()+"\n"
+					+ "* @return\n"
+					+ "* @throws IOException\n"
+					+ "*/\n");
+			}
+			else
+			{
+				sb.append("\n");
+			}
+			sb.append("public  Locator "+locatorName+"() throws IOException\n {\n");
+			//sb.append("   setXmlObjectPath(path);\n");
+			sb.append("   Locator locator=getLocator(\""+locatorName+"\");\n");
+			sb.append("   return locator;\n }\n");
+		}
+	}
+
 	public static void main(String[] args) throws Exception {
 		// TODO 自动生成的方法存根
 		PageObjectAutoCodeForXml.autoCode();

@@ -266,3 +266,27 @@
 [2019-02-21 11:38:59,706] ERROR com.ydd.utils.web.WebElementAction 找不到元素，input输入失败:phoneInput[By.xpath://input[@placeholder='请输入用户手机号1']]
 [2019-02-21 11:38:59,743] INFO  com.ydd.utils.web.TestWebBaseCase close..
 [2019-02-21 11:39:00,966] INFO  com.ydd.utils.web.TestWebBaseCase quit webDriver...
+[2019-02-21 15:43:17,672] INFO  com.ydd.utils.web.TestWebBaseCase init chrome  webDriver...
+[2019-02-21 15:43:30,411] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号']]
+[2019-02-21 15:43:30,609] INFO  com.ydd.utils.web.WebElementAction input输入：phoneInput[By.xpath://input[@placeholder='请输入用户手机号']  value:*******]
+[2019-02-21 15:43:30,609] INFO  com.ydd.utils.web.WebElementAction 查找元素：validButton方式[By.xpath://span[contains(text(),'获取验证码')]]
+[2019-02-21 15:43:30,711] INFO  com.ydd.utils.web.WebElementAction click元素：validButton[By.xpath://span[contains(text(),'获取验证码')]]成功！
+[2019-02-21 15:43:30,712] INFO  com.ydd.utils.web.WebElementAction 查找元素：validInput方式[By.xpath://input[@placeholder='请输入验证码']]
+[2019-02-21 15:43:30,884] INFO  com.ydd.utils.web.WebElementAction input输入：validInput[By.xpath://input[@placeholder='请输入验证码']  value:*******]
+[2019-02-21 15:43:30,885] INFO  com.ydd.utils.web.WebElementAction 查找元素：loginButton方式[By.xpath://div[@class='ivu-form-item-content']/button[1]]
+[2019-02-21 15:43:30,991] INFO  com.ydd.utils.web.WebElementAction click元素：loginButton[By.xpath://div[@class='ivu-form-item-content']/button[1]]成功！
+[2019-02-21 15:43:31,002] INFO  com.ydd.utils.web.TestWebBaseCase close..
+[2019-02-21 15:43:32,373] INFO  com.ydd.utils.web.TestWebBaseCase quit webDriver...
+[2019-02-21 15:44:46,605] INFO  com.ydd.utils.web.TestWebBaseCase init chrome  webDriver...
+[2019-02-21 15:44:54,997] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:55,525] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:56,042] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:56,557] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:57,077] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:57,592] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:58,107] INFO  com.ydd.utils.web.WebElementAction 查找元素：phoneInput方式[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:58,121] INFO  com.ydd.utils.web.WebElementAction 无法定位页面元素
+[2019-02-21 15:44:59,692] ERROR com.ydd.utils.ScreenShot 错误截图：C:\gitwork\autoParent\crmCases\test-output\snapshot\2019-02-21 154458125phoneInput.jpg
+[2019-02-21 15:44:59,692] ERROR com.ydd.utils.web.WebElementAction 找不到元素，input输入失败:phoneInput[By.xpath://input[@placeholder='请输入用户手机号1']]
+[2019-02-21 15:44:59,739] INFO  com.ydd.utils.web.TestWebBaseCase close..
+[2019-02-21 15:45:01,034] INFO  com.ydd.utils.web.TestWebBaseCase quit webDriver...

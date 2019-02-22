@@ -36,47 +36,7 @@ public class XmlReadUtil {
 			SAXReader reader = new SAXReader();
 			Document document = reader.read(file);
 			Element root = document.getRootElement();
-			for (Iterator<?> i = root.elementIterator(); i.hasNext();)
-			{
-				Element page = (Element) i.next();
-				if (page.attribute(0).getValue().equalsIgnoreCase(pageName))
-				{
-					//log.info("成功读取页名:" + pageName);
-					for (Iterator<?> l = page.elementIterator(); l.hasNext();)
-					{
-						String type = null;
-						String timeOut = "3";
-						String value = null;
-						String locatorName = null;
-						Element locator = (Element) l.next();
-						//获取元素名
-						locatorName = locator.getText();
-						//log.info("开始读取"+locatorName+"定位信息");
-						for (Iterator<?> j = locator.attributeIterator(); j.hasNext();)
-						{
-							Attribute attribute = (Attribute) j.next();
-							if (attribute.getName().equals("type"))
-							{
-								type = attribute.getValue();
-								//log.info("读取定位方式： " + type);
-							} else if (attribute.getName().equals("timeout"))
-							{
-								timeOut = attribute.getValue();
-								//log.info("读取元素等待时间 ：" + timeOut);
-							} else if (attribute.getName().equals("value"))
-							{
-								value = attribute.getValue();
-								//log.info("读取定位内容：" + value);
-							}
-						}
-						//trim()去除字符串前后空格
-						Locator temp = new Locator(value.trim(),Integer.parseInt(timeOut), getByType(type),locatorName.trim());
-						//log.info("成功读取 " + locatorName+"元素信息！");
-						locatorMap.put(locatorName.trim(), temp);
-					}
-					continue;
-				}
-			}
+			gennerateLocators(pageName, locatorMap, root);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -85,6 +45,57 @@ public class XmlReadUtil {
 		//log.info("----------解析UILibrary.xml对象库完毕-----------\n");
 		return locatorMap;
 	}
+
+	/**
+	 * 生成map定位
+	 * @param pageName
+	 * @param locatorMap
+	 * @param root
+	 */
+	private void gennerateLocators(String pageName, HashMap<String, Locator> locatorMap, Element root) {
+		for (Iterator<?> i = root.elementIterator(); i.hasNext();)
+		{
+			Element page = (Element) i.next();
+			if (page.attribute(0).getValue().equalsIgnoreCase(pageName))
+			{
+				//log.info("成功读取页名:" + pageName);
+				for (Iterator<?> l = page.elementIterator(); l.hasNext();)
+				{
+					String type = null;
+					String timeOut = "3";
+					String value = null;
+					String locatorName = null;
+					Element locator = (Element) l.next();
+					//获取元素名
+					locatorName = locator.getText();
+					//log.info("开始读取"+locatorName+"定位信息");
+					for (Iterator<?> j = locator.attributeIterator(); j.hasNext();)
+					{
+						Attribute attribute = (Attribute) j.next();
+						if (attribute.getName().equals("type"))
+						{
+							type = attribute.getValue();
+							//log.info("读取定位方式： " + type);
+						} else if (attribute.getName().equals("timeout"))
+						{
+							timeOut = attribute.getValue();
+							//log.info("读取元素等待时间 ：" + timeOut);
+						} else if (attribute.getName().equals("value"))
+						{
+							value = attribute.getValue();
+							//log.info("读取定位内容：" + value);
+						}
+					}
+					//trim()去除字符串前后空格
+					Locator temp = new Locator(value.trim(),Integer.parseInt(timeOut), getByType(type),locatorName.trim());
+					//log.info("成功读取 " + locatorName+"元素信息！");
+					locatorMap.put(locatorName.trim(), temp);
+				}
+				continue;
+			}
+		}
+	}
+
 	public  HashMap<String, Locator> readXMLDocument(InputStream path,String pageName) {
 		Log log=new Log(this.getClass());
 		//log.info("----------开始解析UILibrary.xml对象库-----------");
@@ -96,47 +107,7 @@ public class XmlReadUtil {
 			SAXReader reader = new SAXReader();
 			Document document=reader.read(inputStreamReader);
 			Element root = document.getRootElement();
-			for (Iterator<?> i = root.elementIterator(); i.hasNext();)
-			{
-				Element page = (Element) i.next();
-				if (page.attribute(0).getValue().equalsIgnoreCase(pageName))
-				{
-					//log.info("成功读取页名:" + pageName);
-					for (Iterator<?> l = page.elementIterator(); l.hasNext();)
-					{
-						String type = null;
-						String timeOut = "3";
-						String value = null;
-						String locatorName = null;
-						Element locator = (Element) l.next();
-						//获取元素名
-						locatorName = locator.getText();
-						//log.info("开始读取"+locatorName+"定位信息");
-						for (Iterator<?> j = locator.attributeIterator(); j.hasNext();)
-						{
-							Attribute attribute = (Attribute) j.next();
-							if (attribute.getName().equals("type"))
-							{
-								type = attribute.getValue();
-								//log.info("读取定位方式： " + type);
-							} else if (attribute.getName().equals("timeout"))
-							{
-								timeOut = attribute.getValue();
-								//log.info("读取元素等待时间 ：" + timeOut);
-							} else if (attribute.getName().equals("value"))
-							{
-								value = attribute.getValue();
-								//log.info("读取定位内容：" + value);
-							}
-						}
-						//trim()去除字符串前后空格
-						Locator temp = new Locator(value.trim(),Integer.parseInt(timeOut), getByType(type),locatorName.trim());
-						//log.info("成功读取 " + locatorName+"元素信息！");
-						locatorMap.put(locatorName.trim(), temp);
-					}
-					continue;
-				}
-			}
+			gennerateLocators(pageName, locatorMap, root);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

@@ -3,8 +3,6 @@ package com.ydd.service.crm;
 import com.ydd.page.crm.LoginPage;
 import com.ydd.utils.web.WebElementAction;
 
-import java.io.IOException;
-
 public class LoginService {
     private LoginPage loginPage = new LoginPage();
 

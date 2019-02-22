@@ -20,4 +20,5 @@
 	   <locator type="xpath" timeout="3" value="//span[contains(text(),'获取验证码')]"  desc="获取验证码按钮">validButton</locator>
 	   <locator type="xpath" timeout="3" value="//div[@class='ivu-form-item-content']/button[1]"  desc="登录按钮">loginButton</locator>
     </page>
+
 </map>
